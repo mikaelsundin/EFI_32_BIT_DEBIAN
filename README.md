@@ -1,22 +1,20 @@
 # 32 bit EFI files
 
 Some older computers only support the 32 bit EFI boot.
-One of them is the MacBook 2007. Although it can run a 64 bit OS,
+One of them is the Mac Mini 2.1. Although it can run a 64 bit OS,
 it only supports 32 bit EFI boot partitions.
 
 # Example
-If you want to install Ubuntu on a MacBook 2007, you can not
-just use the USB installer that comes with it.
+If you want to install Debian on a Mac Mini 2.1 with Core2Duo, the debian-mac-12.5.0-amd64-netinst.iso wont work for me.
+This workaround is tested with Debian-12.5-amd64 on a Mac Mini 2.1 with 2GB ram and Core2Duo CPU.
 
 To make it work:
-1. Flash the Ubuntu USB installer on a USB. msdos partition table seemed to work fine.
-2. Copy content of this repository into that installer USB
-3. Don't install Ubuntu but first try it on the USB so we can install an additional package missing.
-4. Run the following commands to install grub 32 bit package so that the installation will be succesful at the end.
-```
-sudo apt-get update
-sudo apt-get install grub-efi-ia32
-```
-5. Now install Ubuntu and it will work.
+1. Download debian-xxx-amd64-netinst.iso https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/
+2. On windows use Rufus to burn ISO to USB stick.
+3. Copy files in boot\grub to USB installer boot\grub, keep boot\efi.img, boot\font.pf2, boot\grub.cnf
+4. Copy EFI to  USB installer boot\grub
+5. Now install Debian and it will work. It seems that Debian can detect that a 32bit UEFI is required.
 
-Well, it did for me :)
+
+Thanks to Frank Aalbers that have publish the orginal working UEFI files at https://github.com/faalbers/EFI_32_BIT for Ubuntu.
+
