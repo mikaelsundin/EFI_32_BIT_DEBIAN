@@ -5,7 +5,8 @@ One of them is the Mac Mini 2.1. Although it can run a 64 bit OS,
 it only supports 32 bit EFI boot partitions.
 
 # Example
-If you want to install Debian on a Mac Mini 2.1 with Core2Duo, the debian-mac-12.5.0-amd64-netinst.iso wont work for me.
+If you want to install Debian on a Mac Mini 2.1 with Core2Duo.
+The debian-mac-12.5.0-amd64-netinst.iso was not working for me.
 This workaround is tested with Debian-12.5-amd64 on a Mac Mini 2.1 with 2GB ram and Core2Duo CPU.
 
 To make it work:
